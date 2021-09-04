@@ -13,8 +13,9 @@ class node:
         return self.api_call_start < other.api_call_start
 
     def printall(self):
-        print(self.op_type, self.api_call_start,
-              self.gpu_duration, self.kenrel_name)
+        print("%-20s %-15d %-10d %s" %
+            (self.op_type, self.api_call_start,self.gpu_duration, self.kenrel_name))
+
 
 def parsing(file_path):
 
