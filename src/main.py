@@ -15,10 +15,10 @@ def write2file(filename,result):
 def main():
 
     args = argv.argparsing()
-    # gpu = show_gpu(args.gpuinfo)
+    gpu = show_gpu(args.gpuinfo)
 
-    # command = generate_command(args.model_type, args.path, args.gpu_idx)
-    # os.system(command)
+    command = generate_command(args.model_type, args.path, args.gpu_idx)
+    os.system(command)
 
     log_file_name = "log/dlprof_iteration.json"
     dlprof_result = dlprof_parser.parsing(log_file_name)
