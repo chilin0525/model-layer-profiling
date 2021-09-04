@@ -3,14 +3,11 @@ import argparse
 def argparsing():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "-p", "--path", dest="path", required=True, 
-        help="specify your pretrained model path")
+        "-c", "--command", dest="command", 
+        help="whole inference script")
     parser.add_argument(
-        "-t", "--model_type", choices=["pytorch", "onnx", "tensorrt"], dest="model_type", required=True,
+        "-t", "--model_type", choices=["pytorch", "onnx", "tensorrt"], dest="model_type",
         help="specify pretrained model type")
-    # parser.add_argument(
-    #     "-r", "--runtime", choices=["pytorch", "onnxruntime", "tensorrt"], dest="runtime", required=False, 
-    #     help="specify runntime platform")
     parser.add_argument(
         "-o", "--output", default="layer_inference_result", dest="output_filename", type=str,
         help="specify output file name, default is \"layer_inference_result\"")

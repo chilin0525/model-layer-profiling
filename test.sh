@@ -1,0 +1,1 @@
+python3 ./src/main.py -c "python3 ./src/pytorch_profiler.py resnet50.pt 0" -t pytorch
