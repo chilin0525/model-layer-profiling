@@ -9,6 +9,8 @@
         * [doc](https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/index.html#python_topics)
     * Pytorch
         * [doc](https://pytorch.org/get-started/locally/)
+    * nsys
+        * [doc](https://docs.nvidia.com/nsight-systems/InstallationGuide/index.html)
 
 ## Docker
 
@@ -20,6 +22,8 @@
 
 * run:
 
+    * It is important to write ```--gpu all``` for exposing GPU information to docker container!
+
     ```
-    $ docker run -it --gp
+    $ docker run -it --gpus all <image>:<tag>
     ```
