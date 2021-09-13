@@ -1,5 +1,29 @@
 # model-layer-profiling
 
+## CLI command
+
+We provide following function:
+1. show GPU information: detect your GPU index and name, it is useful when you need choose a GPU to do inference task.
+2. profile: summarize source used by every layer in Machine Learning model, e.q. duration, API call time, etc
+
+usage: main.py [-h] [-c COMMAND] [-t {pytorch,tensorrt}] [-o OUTPUT_FILENAME] [-f {json,csv}] [-g GPU_IDX] [-l] function
+
+### show GPU information
+
+```TOOL_NAME gpuinfo```
+
+### profile 
+
+```TOOL_NAME profile -t <model_type>```
+
+|short |long|possible parameters|default|description|
+|:---|:---|:---|:---|:---|
+|-t|--model_type|pytorch, tensorrt|-|choose model type|
+|-o|--output|-|layer_inference_result| set summary file name|
+|-f|--format|json,csv|write to file by simple format| set summary file format|
+|-g|--gpu|-|0|set up gpu index to do inference|
+|-l|--log|-|True|determine to delete log files or not,<br>if specific ```-l``` will keep log;<br>Otherwise, delete all log files|
+
 ## Docker
 
 * build:
@@ -18,7 +42,7 @@
 
 ## Example
 
-I porvide some examples how to use this tool to sumamrize layer information in Machine Learning Model. The all example under ```example``` folder and write shell script to automate install required Machine Learning model and do inference task, finally write layer information to file.
+I porvide some examples how to use this tool to sumamrize layer information in Machine Learning Model. The all example under ```example``` folder and exist shell script to automate install required Machine Learning model and do inference task, finally write layer information to file.
 
 steps:
 1. clone the repo
