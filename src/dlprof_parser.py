@@ -13,9 +13,18 @@ class node:
         return self.api_call_start < other.api_call_start
 
     def printall(self):
-        print("%-40s %-15d %-10d %s" %
+        print("%-60s %-15d %-10d %s" %
             (self.op_type, self.api_call_start,self.gpu_duration, self.kenrel_name))
 
+    def to_dict(self):
+        tmp = {"Op Type": self.op_type.replace('"',""),
+               "GPU Duration(ns):": self.gpu_duration,
+               "API Call Start (ns)": self.api_call_start,
+               "Long Kernel Name": self.kenrel_name.replace('"', "")}
+        return tmp
+    def to_list(self):
+        return [self.op_type.replace('"', ""), self.gpu_duration,
+                self.api_call_start, self.kenrel_name.replace('"', "")]
 
 def parsing(file_path):
 
