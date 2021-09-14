@@ -1,20 +1,28 @@
-# model-layer-profiling
+# modelstat
+
+**modelstat** is CLI tool to summarize the Machine Learning model layer inference time. It is base on **Nvidia-dlprof**, you can visit [document](https://docs.nvidia.com/deeplearning/frameworks/dlprof-user-guide/#using_ngc_docker_container) to get more information. The result got from **modelstat** is similar to [Pyprof - PyTorch Profiling tool](https://github.com/NVIDIA/PyProf), but on June 30th 2021, NVIDIA will no longer make contributions to the PyProf repository. If you want to observe the result from Pyprof, refer to [example/pyprof].
+
+*  support: 
+    * Pytorch
+    * Tensorrt 
+    * Tensorflow (TBD)
+
 
 ## CLI command
 
-We provide following function:
+**modelstat** provide following function:
 1. show GPU information: detect your GPU index and name, it is useful when you need choose a GPU to do inference task.
 2. profile: summarize source used by every layer in Machine Learning model, e.q. duration, API call time, etc
 
-usage: main.py [-h] [-c COMMAND] [-t {pytorch,tensorrt}] [-o OUTPUT_FILENAME] [-f {json,csv}] [-g GPU_IDX] [-l] function
+usage: <br> modelstat [-h] [-c COMMAND] [-t {pytorch,tensorrt}] [-o OUTPUT_FILENAME] [-f {json,csv}] [-g GPU_IDX] [-l] function
 
 ### show GPU information
 
-```TOOL_NAME gpuinfo```
+```modelstat gpuinfo```
 
 ### profile 
 
-```TOOL_NAME profile -t <model_type>```
+```modelstat profile -t <model_type>```
 
 |short |long|possible parameters|default|description|
 |:---|:---|:---|:---|:---|
