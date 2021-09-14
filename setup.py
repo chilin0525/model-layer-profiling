@@ -15,7 +15,7 @@ setuptools.setup(
     description="modelstat is CLI tool to summarize the Machine Learning model layer inference time",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/chilin0525/model-layer-profiling/tree/pypi",
+    url="https://github.com/chilin0525/model-layer-profiling",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
