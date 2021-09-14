@@ -1,11 +1,11 @@
-import argv
+from . import argv
 import os
 import sys
 import json
 import csv
-import dlprof_parser
-from show_gpu_info import show_gpu
-from profiling_command import *
+from . import dlprof_parser
+from .show_gpu_info import show_gpu
+from .profiling_command import *
 
 
 def to_dict(result):
